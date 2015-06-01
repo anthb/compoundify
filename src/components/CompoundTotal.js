@@ -11,7 +11,7 @@ var CompoundTotal = React.createClass({
     return (
       <div>
         <h2>Total</h2>
-        <p>$<span>55</span></p>
+        <p>$<span>{this.props.deposit}</span></p>
       </div>
     );
   }
