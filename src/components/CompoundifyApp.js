@@ -15,7 +15,8 @@ var CompoundifyApp = React.createClass({
   getInitialState: function() {
     return {
       deposit: 0,
-      term: 0
+      term: 0,
+      monthlyContributions: 0
     };
   },
   handleFormUpdate: function(key, data) {
@@ -30,7 +31,7 @@ var CompoundifyApp = React.createClass({
       <div className='main'>
         <ReactTransitionGroup transitionName="fade">
           <img src={imageURL} />
-          <CompoundForm compoundFormUpdate={this.handleFormUpdate} />
+          <CompoundForm data={this.state} compoundFormUpdate={this.handleFormUpdate} />
           <CompoundTotal deposit={this.state.deposit} term={this.state.term} />
         </ReactTransitionGroup>
       </div>

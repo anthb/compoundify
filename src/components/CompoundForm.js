@@ -9,8 +9,9 @@ var React = require('react/addons');
 var CompoundForm = React.createClass({
   getInitialState: function() {
     return {
-      deposit: 0,
-      term: 0
+      deposit: this.props.deposit,
+      term: this.props.term,
+      monthlyContributions: this.props.monthlyContributions
     };
   },
   updateInputs: function(event) {
@@ -31,8 +32,12 @@ var CompoundForm = React.createClass({
   render: function() {
     return (
       <form className="compound-form">
+        <label>Deposit Amount</label>
         <input type="number" name="deposit" onChange={this.updateInputs} className="compound-form__deposit" />
+        <label>Term (in months)</label>
         <input type="number" name="term" onChange={this.updateInputs} className="compound-form__term" />
+        <label>Monthly contributions</label>
+        <input type="number" name="monthlyContributions" onChange={this.updateInputs} className="compound-form__monthly-contribution" />
       </form>
     );
   }
