@@ -18,15 +18,14 @@ var CompoundifyApp = React.createClass({
       term: 0
     };
   },
-  handleFormUpdate: function(data) {
-    console.log('yaaaay it updated')
-    console.log(data)
+  handleFormUpdate: function(key, data) {
+    console.log(key, data);
     this.setState({
-      deposit: data.deposit,
-      term: data.term
+      [key]: data
     });
   },
   render: function() {
+    console.log(this.state);
     return (
       <div className='main'>
         <ReactTransitionGroup transitionName="fade">

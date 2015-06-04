@@ -13,10 +13,10 @@ var CompoundForm = React.createClass({
       term: 0
     };
   },
-  updateDeposit: function(event) {
-
-    this.setState({deposit : event.target.value});
-    this.updateForm();
+  updateInputs: function(event) {
+    
+    this.setState({[event.target.name] : [event.target.value]});
+    this.props.compoundFormUpdate(event.target.name, event.target.value);
   },
   updateTerm: function(event) {
     this.setState({term : event.target.value});
@@ -26,13 +26,13 @@ var CompoundForm = React.createClass({
     this.props.compoundFormUpdate({
       deposit: this.state.deposit,
       term: this.state.term
-    })
+    });
   },
   render: function() {
     return (
       <form className="compound-form">
-        <input type="number" onChange={this.updateDeposit} className="compound-form__deposit" />
-        <input type="number" onChange={this.updateTerm} className="compound-form__term" />
+        <input type="number" name="deposit" onChange={this.updateInputs} className="compound-form__deposit" />
+        <input type="number" name="term" onChange={this.updateInputs} className="compound-form__term" />
       </form>
     );
   }
