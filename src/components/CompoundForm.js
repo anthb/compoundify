@@ -9,9 +9,9 @@ var React = require('react/addons');
 var CompoundForm = React.createClass({
   getInitialState: function() {
     return {
-      deposit: this.props.deposit,
-      term: this.props.term,
-      monthlyContributions: this.props.monthlyContributions
+      deposit: this.props.data.deposit,
+      term: this.props.data.term,
+      monthlyContributions: this.props.data.monthlyContributions
     };
   },
   updateInputs: function(event) {

@@ -32,7 +32,8 @@ var CompoundifyApp = React.createClass({
         <ReactTransitionGroup transitionName="fade">
           <img src={imageURL} />
           <CompoundForm data={this.state} compoundFormUpdate={this.handleFormUpdate} />
-          <CompoundTotal deposit={this.state.deposit} term={this.state.term} />
+          <p>Interest Rate is 5%</p>
+          <CompoundTotal data={this.state} />
         </ReactTransitionGroup>
       </div>
     );
