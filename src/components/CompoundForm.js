@@ -34,7 +34,7 @@ var CompoundForm = React.createClass({
       <form className="compound-form">
         <label>Deposit Amount</label>
         <input type="number" name="deposit" onChange={this.updateInputs} className="compound-form__deposit" />
-        <label>Term (in months)</label>
+        <label>Term (in years)</label>
         <input type="number" name="term" onChange={this.updateInputs} className="compound-form__term" />
         <label>Monthly contributions</label>
         <input type="number" name="monthlyContributions" onChange={this.updateInputs} className="compound-form__monthly-contribution" />
