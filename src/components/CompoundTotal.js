@@ -24,6 +24,10 @@ var CompoundTotal = React.createClass({
   roundNumbers: function(value, decimals) {
     return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
   },
+  getLocaleNumber: function(number) {
+
+    return Number(number).toLocaleString('en');
+  },
   getTotalAmount: function(props) {
     // total * 
     // PMT * (((1 + r/n)^nt - 1) / (r/n))
@@ -73,7 +77,7 @@ var CompoundTotal = React.createClass({
       totalInterest: this.roundNumbers(totalSum - totalContributions, 2)
     });
     
-
+    roundedSum = this.getLocaleNumber(roundedSum);
     return roundedSum;
   },
   totalContributions: function(timesCompoundedPerYear, yearsInvested, pmt, principal) {
