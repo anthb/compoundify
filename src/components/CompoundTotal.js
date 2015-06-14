@@ -48,7 +48,9 @@ var CompoundTotal = React.createClass({
         futureValueOfSeries,
         annualInterestRate,
         timesCompoundedPerYear,
-        yearsInvested;
+        yearsInvested,
+        totalContributions,
+        totalInterest;
 
     
     principal = parseFloat(props.deposit);
@@ -65,9 +67,17 @@ var CompoundTotal = React.createClass({
     totalSum = compoundInterestForPrincipal + futureValueOfSeries;
     roundedSum = this.roundNumbers(totalSum, 2);
 
+    totalContributions = this.totalContributions(timesCompoundedPerYear, yearsInvested, pmt, principal);
+    this.setState({
+      totalContributions: totalContributions,
+      totalInterest: this.roundNumbers(totalSum - totalContributions, 2)
+    });
     
 
     return roundedSum;
+  },
+  totalContributions: function(timesCompoundedPerYear, yearsInvested, pmt, principal) {
+    return timesCompoundedPerYear * yearsInvested * pmt + principal;
   },
   render: function() {
     return (
@@ -77,6 +87,8 @@ var CompoundTotal = React.createClass({
         <p>Monthly contributions - $<span>{this.props.data.monthlyContributions}</span></p>
 
         <h2>Total - $<span>{this.state.totalAmount}</span></h2>
+        <p>Your total contributions: {this.state.totalContributions}</p>
+        <p>Total interest: {this.state.totalInterest}</p>
       </div>
     );
   }
