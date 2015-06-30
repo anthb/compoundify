@@ -1,13 +1,13 @@
 'use strict';
 
 var React = require('react/addons');
-var CompoundForm = require('./CompoundForm');
+var CompoundForm = require('./compound_form/CompoundForm');
 var CompoundTotal = require('./CompoundTotal');
 var ReactTransitionGroup = React.addons.TransitionGroup;
 
 // CSS
 require('normalize.css');
-require('../styles/main.css');
+require('../styles/main.scss');
 
 var imageURL = require('../images/yeoman.png');
 
@@ -30,7 +30,7 @@ var CompoundifyApp = React.createClass({
     return (
       <div className='main'>
         <ReactTransitionGroup transitionName="fade">
-          <img src={imageURL} />
+          <h1>Compoundify</h1>
           <CompoundForm data={this.state} compoundFormUpdate={this.handleFormUpdate} />
           <p>Interest Rate is 5%</p>
           <CompoundTotal data={this.state} />

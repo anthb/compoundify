@@ -4,7 +4,7 @@ var React = require('react/addons');
 //var ReactTransitionGroup = React.addons.TransitionGroup;
 
 // CSS
-//require('../styles/main.css');
+require('./compound_form.scss');
 
 var CompoundForm = React.createClass({
   getInitialState: function() {
@@ -32,12 +32,18 @@ var CompoundForm = React.createClass({
   render: function() {
     return (
       <form className="compound-form">
-        <label>Deposit Amount</label>
-        <input type="number" name="deposit" onChange={this.updateInputs} className="compound-form__deposit" />
-        <label>Term (in years)</label>
-        <input type="number" name="term" onChange={this.updateInputs} className="compound-form__term" />
-        <label>Monthly contributions</label>
-        <input type="number" name="monthlyContributions" onChange={this.updateInputs} className="compound-form__monthly-contribution" />
+        <div className="compound-form__container">
+          <div className="form__group">
+            <label className="form__label">Deposit Amount</label>
+            <input className="form__input" type="number" name="deposit" onChange={this.updateInputs} />
+          </div>
+          <div className="form__group">
+            <label className="form__label">Monthly contributions</label>
+            <input className="form__input" type="number" name="monthlyContributions" onChange={this.updateInputs} />
+          </div>
+        </div>
+        <label className="form__label">Term (in years)</label>
+        <input className="form__input" type="number" name="term" onChange={this.updateInputs} />
       </form>
     );
   }
