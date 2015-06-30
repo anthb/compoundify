@@ -1,14 +1,25 @@
+$form-width: 700px;
+
+.cform {
+  max-width: $form-width;
+  margin:0 auto;
+}
 
 
-.form__group {
+.cform__container {
+  display: flex;
+  margin-bottom: 0.5em;
+}
+
+.cform__group {
   width: 50%;
 }
 
-.form__label {
+.cform__label {
   display: block;
 }
 
-.form__input {
+.cform__input {
   display: block;
   width: 100%;
 }

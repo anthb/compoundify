@@ -31,19 +31,19 @@ var CompoundForm = React.createClass({
   },
   render: function() {
     return (
-      <form className="compound-form">
-        <div className="compound-form__container">
-          <div className="form__group">
-            <label className="form__label">Deposit Amount</label>
-            <input className="form__input" type="number" name="deposit" onChange={this.updateInputs} />
+      <form className="cform">
+        <div className="cform__container">
+          <div className="cform__group">
+            <label className="cform__label">Deposit Amount</label>
+            <input className="cform__input" type="number" name="deposit" onChange={this.updateInputs} />
           </div>
-          <div className="form__group">
-            <label className="form__label">Monthly contributions</label>
-            <input className="form__input" type="number" name="monthlyContributions" onChange={this.updateInputs} />
+          <div className="cform__group">
+            <label className="cform__label">Monthly contributions</label>
+            <input className="cform__input" type="number" name="monthlyContributions" onChange={this.updateInputs} />
           </div>
         </div>
-        <label className="form__label">Term (in years)</label>
-        <input className="form__input" type="number" name="term" onChange={this.updateInputs} />
+        <label className="cform__label">Term (in years)</label>
+        <input className="cform__input" type="number" name="term" onChange={this.updateInputs} />
       </form>
     );
   }
