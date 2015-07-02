@@ -15,8 +15,9 @@ var CompoundifyApp = React.createClass({
   getInitialState: function() {
     return {
       deposit: 0,
-      term: 0,
-      monthlyContributions: 0
+      term: 1,
+      monthlyContributions: 0,
+      interest: 3
     };
   },
   handleFormUpdate: function(key, data) {
