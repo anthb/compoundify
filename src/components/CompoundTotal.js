@@ -13,6 +13,7 @@ var CompoundTotal = React.createClass({
       deposit: this.props.data.deposit,
       term: this.props.data.term,
       monthlyContributions: this.props.data.monthlyContributions,
+      interest: this.props.data.interest,
       totalAmount: this.getTotalAmount(this.props.data)
     };
   },
@@ -56,11 +57,12 @@ var CompoundTotal = React.createClass({
         totalContributions,
         totalInterest;
 
-    
+    console.log(props);
     principal = parseFloat(props.deposit);
     yearsInvested = parseFloat(props.term);
     pmt = parseFloat(props.monthlyContributions);
-    annualInterestRate = 0.05;
+    // annualInterestRate = 0.05;
+    annualInterestRate = parseFloat(props.interest) / 100;
     timesCompoundedPerYear = 12;
 
     compoundInterest = Math.pow((1 + (annualInterestRate / timesCompoundedPerYear)), timesCompoundedPerYear * yearsInvested);
