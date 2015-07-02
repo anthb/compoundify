@@ -1,0 +1,35 @@
+$fform-width: 500px;
+$fform-grey: #666;
+$fform-border: #bbb;
+
+.cform {
+  max-width: $fform-width;
+  margin:0 auto;
+  text-align: left;
+}
+
+
+.cform__container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+
+.cform__group {
+  width: 48%;
+}
+
+.cform__label {
+  display: block;
+  padding-bottom: 0.5em;
+  color: $fform-grey;
+}
+
+.cform__input {
+  display: block;
+  width: 100%;
+  padding: 3px 8px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid $fform-border;
+}

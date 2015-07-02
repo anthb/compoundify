@@ -1,16 +1,29 @@
+/* Colours */
+$white: #fff;
+$open-sans: 'Open Sans', sans-serif;
+$dark-grey: #222;
+
 /* Stiziles */
 
 html, body {
-  background: #222222;
+  background: $white;
+  font-family: $open-sans;
+  color: $dark-grey;
 }
+
+/* Breakpoints */
+$large-size: 1000px;
+$large-up: "screen and (min-width: 1000px)";
 
 /* main */
 
 .main {
-  width: 100%;
-  height: 100%;
-  background: #222222;
-  color: #fff;
+  text-align: center;
+
+  @media #{$large-up} {
+    width: $large-size;
+    margin: 0 auto;
+  }
 }
 
 .main img {
