@@ -33,7 +33,6 @@ var CompoundifyApp = React.createClass({
         <ReactTransitionGroup transitionName="fade">
           <h1>Compoundify</h1>
           <CompoundForm data={this.state} compoundFormUpdate={this.handleFormUpdate} />
-          <p>Interest Rate is 5%</p>
           <CompoundTotal data={this.state} />
         </ReactTransitionGroup>
       </div>
