@@ -75,8 +75,8 @@ var CompoundTotal = React.createClass({
 
     totalContributions = this.totalContributions(timesCompoundedPerYear, yearsInvested, pmt, principal);
     this.setState({
-      totalContributions: totalContributions,
-      totalInterest: this.roundNumbers(totalSum - totalContributions, 2)
+      totalContributions: this.getLocaleNumber(this.roundNumbers(totalContributions, 2)),
+      totalInterest: this.getLocaleNumber(this.roundNumbers(totalSum - totalContributions, 2))
     });
     
     roundedSum = this.getLocaleNumber(roundedSum);
@@ -88,13 +88,9 @@ var CompoundTotal = React.createClass({
   render: function() {
     return (
       <div>
-        <p>Deposited - $<span>{this.props.data.deposit}</span></p>
-        <p>Term (months) - $<span>{this.props.data.term}</span></p>
-        <p>Monthly contributions - $<span>{this.props.data.monthlyContributions}</span></p>
-
-        <h2>Total - $<span>{this.state.totalAmount}</span></h2>
-        <p>Your total contributions: {this.state.totalContributions}</p>
-        <p>Total interest: {this.state.totalInterest}</p>
+        <h1>Total: ${this.state.totalAmount}</h1>
+        <p>Your total contributions: ${this.state.totalContributions}</p>
+        <p>Total interest: ${this.state.totalInterest}</p>
       </div>
     );
   }

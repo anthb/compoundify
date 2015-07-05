@@ -2,6 +2,7 @@
 $white: #fff;
 $open-sans: 'Open Sans', sans-serif;
 $dark-grey: #222;
+$blue: #60A6EA;
 
 /* Stiziles */
 
@@ -9,6 +10,10 @@ html, body {
   background: $white;
   font-family: $open-sans;
   color: $dark-grey;
+}
+
+body {
+  border-top: 8px solid $blue;
 }
 
 /* Breakpoints */
